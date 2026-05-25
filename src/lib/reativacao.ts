@@ -23,7 +23,6 @@ export const calcNivel = (
 };
 
 export const calcPontos = (input: InteractionInput) => {
-  let pts = 0;
   let convPonderada = 0;
   const valor = input.valorPedido ?? 0;
 
@@ -34,7 +33,7 @@ export const calcPontos = (input: InteractionInput) => {
     convertido: 50,
   };
 
-  pts = deparaPontosBase[input.status];
+  let pts = deparaPontosBase[input.status];
 
   if (input.status === "convertido") {
     if (input.tipo === "novo") pts = 80;
